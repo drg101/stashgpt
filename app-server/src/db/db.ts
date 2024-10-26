@@ -14,7 +14,13 @@ export interface Database {
 }
 
 const dialect = new PostgresDialect({
-  pool: new Pool(Deno.env.get("DB_URL")),
+  pool: new Pool({
+    database: Deno.env.get('PGDATABASE'),
+    host: Deno.env.get('PGHOST'),
+    user: Deno.env.get('PGUSER'),
+    password: Deno.env.get('PGPASSWORD'),
+    max: 10,
+  }),
 });
 
 export const db = new Kysely<Database>({

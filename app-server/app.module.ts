@@ -10,13 +10,13 @@ import { GoogleAIService } from "./src/model/providers/google-ai.service.ts";
 
 @Module({
   providers: [
+    UtilService,
     {
       provide: APP_PIPE,
       useClass: ZodValidationPipe,
     },
     ResponseService,
     PromptService,
-    UtilService,
     ModelService,
     GoogleAIService,
   ],

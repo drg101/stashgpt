@@ -5,10 +5,11 @@ import type {
   Selectable,
   Updateable,
 } from "kysely";
+import { builtins as Types } from "pg-types";
 
 export interface PromptTable {
   // uuid
-  id: Generated<"uuid">;
+  id: Generated<Types.UUID>;
 
   /** ex: food_prompt */
   prompt_name: string;
