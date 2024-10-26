@@ -9,7 +9,7 @@ import {
 import { ResponseService } from "./response.service.ts";
 import { AuthGuard } from "../auth/auth.guard.ts";
 import type { GetResponseDto } from "./response.types.ts";
-import type { PromptService } from "../prompt/prompt.service.ts";
+import { PromptService } from "../prompt/prompt.service.ts";
 import type { RequestType } from "../global/global.types.ts";
 
 @Controller("response")

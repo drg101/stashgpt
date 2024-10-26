@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import type { Prompt } from "../prompt/prompt.schema.ts";
-import type { UtilService } from "../util/util.service.ts";
+import { UtilService } from "../util/util.service.ts";
 import { db } from "../db/db.ts";
 import type {
   NewResponse,
@@ -8,7 +8,7 @@ import type {
   Response,
 } from "./response.schema.ts";
 import type { Json } from "../global/global.types.ts";
-import type { ModelService } from "../model/model.service.ts";
+import { ModelService } from "../model/model.service.ts";
 import { builtins as Types } from "pg-types";
 
 @Injectable()
