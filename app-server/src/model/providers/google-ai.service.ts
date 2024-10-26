@@ -17,14 +17,14 @@ export class GoogleAIService implements ModelInterface {
 
   async evaluate(options: ModelEvaluateOptions) {
     const { prompt, input } = options;
-    if (prompt.model.provider !== "google-ai") {
+    if (prompt.provider !== "google-ai") {
       throw new Error(
-        `Invalid provider for google-ai: ${prompt.model.provider}`,
+        `Invalid provider for google-ai: ${prompt.provider}`,
       );
     }
 
     const model = this.genAI.getGenerativeModel({
-      model: prompt.model.model,
+      model: prompt.model,
       systemInstruction: prompt.system_prompt,
     });
 
@@ -33,8 +33,8 @@ export class GoogleAIService implements ModelInterface {
 
     const chatSession = model.startChat({
       generationConfig: {
-        responseSchema: prompt.model.schema as ResponseSchema,
-        temperature: prompt.model.temperature,
+        responseSchema: prompt.schema as ResponseSchema,
+        temperature: prompt.temperature,
       },
     });
 

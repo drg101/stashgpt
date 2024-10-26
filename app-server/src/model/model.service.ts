@@ -6,7 +6,7 @@ import { GoogleAIService } from "./providers/google-ai.service.ts";
 @Injectable()
 export class ModelService implements ModelInterface {
   private readonly serviceMap: Record<
-    Prompt["model"]["provider"],
+    Prompt["provider"],
     ModelInterface
   >;
 
@@ -17,7 +17,7 @@ export class ModelService implements ModelInterface {
   }
 
   async evaluate(options: ModelEvaluateOptions) {
-    return await this.serviceMap[options.prompt.model.provider].evaluate(
+    return await this.serviceMap[options.prompt.provider].evaluate(
       options,
     );
   }

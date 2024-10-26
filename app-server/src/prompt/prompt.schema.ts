@@ -5,11 +5,10 @@ import type {
   Selectable,
   Updateable,
 } from "kysely";
-import { builtins as Types } from "pg-types";
 
 export interface PromptTable {
   // uuid
-  id: Generated<Types.UUID>;
+  id: Generated<string>;
 
   /** ex: food_prompt */
   prompt_name: string;
@@ -17,14 +16,12 @@ export interface PromptTable {
   prompt_version: string;
 
   /** Only google ai studio currently supported */
-  model: JSONColumnType<{
-    provider: "google-ai";
-    model: "gemini-1.5-flash-002";
-    /** Default to 1 */
-    temperature?: number;
-    /** JSON schema is supported for gemini models */
-    schema?: JSONColumnType<object>;
-  }>;
+  provider: "google-ai";
+  model: "gemini-1.5-flash-002";
+  /** Default to 1 */
+  temperature?: number;
+  /** JSON schema is supported for gemini models */
+  schema?: JSONColumnType<object>;
 
   /** supports handlebars format */
   system_prompt?: string;

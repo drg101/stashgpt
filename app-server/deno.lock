@@ -17,13 +17,16 @@
     "npm:@nestjs/platform-express@^10.4.4": "10.4.4_@nestjs+common@10.4.4__reflect-metadata@0.2.2__rxjs@7.8.1_@nestjs+core@10.4.4__@nestjs+common@10.4.4___reflect-metadata@0.2.2___rxjs@7.8.1__reflect-metadata@0.2.2__rxjs@7.8.1",
     "npm:@nestjs/testing@^10.4.4": "10.4.4_@nestjs+common@10.4.4__reflect-metadata@0.2.2__rxjs@7.8.1_@nestjs+core@10.4.4__@nestjs+common@10.4.4___reflect-metadata@0.2.2___rxjs@7.8.1__reflect-metadata@0.2.2__rxjs@7.8.1_@nestjs+platform-express@10.4.4__@nestjs+common@10.4.4___reflect-metadata@0.2.2___rxjs@7.8.1__@nestjs+core@10.4.4___@nestjs+common@10.4.4____reflect-metadata@0.2.2____rxjs@7.8.1___reflect-metadata@0.2.2___rxjs@7.8.1_@nestjs+platform-express@10.4.4__@nestjs+common@10.4.4___reflect-metadata@0.2.2___rxjs@7.8.1__@nestjs+core@10.4.4___@nestjs+common@10.4.4____reflect-metadata@0.2.2____rxjs@7.8.1___reflect-metadata@0.2.2___rxjs@7.8.1__@nestjs+core@10.4.4___@nestjs+common@10.4.4____reflect-metadata@0.2.2____rxjs@7.8.1___reflect-metadata@0.2.2___rxjs@7.8.1___@nestjs+platform-express@10.4.4_@nestjs+core@10.4.4__@nestjs+common@10.4.4___reflect-metadata@0.2.2___rxjs@7.8.1__reflect-metadata@0.2.2__rxjs@7.8.1__@nestjs+platform-express@10.4.4___@nestjs+common@10.4.4____reflect-metadata@0.2.2____rxjs@7.8.1___@nestjs+core@10.4.4____@nestjs+common@10.4.4_____reflect-metadata@0.2.2_____rxjs@7.8.1____reflect-metadata@0.2.2____rxjs@7.8.1___@nestjs+core@10.4.4",
     "npm:@types/node@*": "22.5.4",
+    "npm:@types/pg@^8.11.10": "8.11.10",
     "npm:firebase-admin@^12.6.0": "12.6.0",
     "npm:handlebars@^4.7.8": "4.7.8",
+    "npm:kysely-neon@^1.3.0": "1.3.0_@neondatabase+serverless@0.4.26_kysely@0.27.4",
     "npm:kysely@~0.27.4": "0.27.4",
     "npm:nestjs-zod@^4.1.0": "4.1.0_@nestjs+common@10.4.4__reflect-metadata@0.2.2__rxjs@7.8.1_@nestjs+core@10.4.4__@nestjs+common@10.4.4___reflect-metadata@0.2.2___rxjs@7.8.1__reflect-metadata@0.2.2__rxjs@7.8.1_zod@3.23.8_@nestjs+core@10.4.4__@nestjs+common@10.4.4___reflect-metadata@0.2.2___rxjs@7.8.1__reflect-metadata@0.2.2__rxjs@7.8.1__@nestjs+platform-express@10.4.4___@nestjs+common@10.4.4____reflect-metadata@0.2.2____rxjs@7.8.1___@nestjs+core@10.4.4____@nestjs+common@10.4.4_____reflect-metadata@0.2.2_____rxjs@7.8.1____reflect-metadata@0.2.2____rxjs@7.8.1_@nestjs+platform-express@10.4.4__@nestjs+common@10.4.4___reflect-metadata@0.2.2___rxjs@7.8.1__@nestjs+core@10.4.4___@nestjs+common@10.4.4____reflect-metadata@0.2.2____rxjs@7.8.1___reflect-metadata@0.2.2___rxjs@7.8.1",
     "npm:pg-pool@^3.7.0": "3.7.0_pg@8.13.1",
     "npm:pg-types@^4.0.2": "4.0.2",
     "npm:pg@^8.13.1": "8.13.1",
+    "npm:ws@^8.18.0": "8.18.0",
     "npm:zod@^3.23.8": "3.23.8"
   },
   "jsr": {
@@ -202,6 +205,12 @@
     },
     "@lukeed/csprng@1.1.0": {
       "integrity": "sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA=="
+    },
+    "@neondatabase/serverless@0.4.26": {
+      "integrity": "sha512-6DYEKos2GYn8NTgcJf33BLAx//LcgqzHVavQWe6ZkaDqmEq0I0Xtub6pzwFdq9iayNdCj7e2b0QKr5a8QKB8kQ==",
+      "dependencies": [
+        "@types/pg@8.6.6"
+      ]
     },
     "@nest-zod/z@1.0.1_@nestjs+common@10.4.4__reflect-metadata@0.2.2__rxjs@7.8.1_@nestjs+core@10.4.4__@nestjs+common@10.4.4___reflect-metadata@0.2.2___rxjs@7.8.1__reflect-metadata@0.2.2__rxjs@7.8.1__@nestjs+platform-express@10.4.4___@nestjs+common@10.4.4____reflect-metadata@0.2.2____rxjs@7.8.1___@nestjs+core@10.4.4____@nestjs+common@10.4.4_____reflect-metadata@0.2.2_____rxjs@7.8.1____reflect-metadata@0.2.2____rxjs@7.8.1_zod@3.23.8_@nestjs+platform-express@10.4.4__@nestjs+common@10.4.4___reflect-metadata@0.2.2___rxjs@7.8.1__@nestjs+core@10.4.4___@nestjs+common@10.4.4____reflect-metadata@0.2.2____rxjs@7.8.1___reflect-metadata@0.2.2___rxjs@7.8.1": {
       "integrity": "sha512-NsJ2GN7/k92/UCKfJ/y6R+ANNee44gt8t3U84zqGTcHDlz4gvxWnpciVkAlN7vJOfFOLTjPAXpuZMnpmPNA1Iw==",
@@ -426,6 +435,22 @@
       "integrity": "sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==",
       "dependencies": [
         "undici-types"
+      ]
+    },
+    "@types/pg@8.11.10": {
+      "integrity": "sha512-LczQUW4dbOQzsH2RQ5qoeJ6qJPdrcM/DcMLoqWQkMLMsq83J5lAX3LXjdkWdpscFy67JSOWDnh7Ny/sPFykmkg==",
+      "dependencies": [
+        "@types/node",
+        "pg-protocol",
+        "pg-types@4.0.2"
+      ]
+    },
+    "@types/pg@8.6.6": {
+      "integrity": "sha512-O2xNmXebtwVekJDD+02udOncjVcMZQuTEQEMpKJ0ZRf5E7/9JJX3izhKUcUifBkyKpljyUM6BTgy2trmviKlpw==",
+      "dependencies": [
+        "@types/node",
+        "pg-protocol",
+        "pg-types@2.2.0"
       ]
     },
     "@types/qs@6.9.16": {
@@ -1052,6 +1077,13 @@
         "safe-buffer@5.2.1"
       ]
     },
+    "kysely-neon@1.3.0_@neondatabase+serverless@0.4.26_kysely@0.27.4": {
+      "integrity": "sha512-CIIlbmqpIXVJDdBEYtEOwbmALag0jmqYrGfBeM4cHKb9AgBGs+X1SvXUZ8TqkDacQEqEZN2XtsDoUkcMIISjHw==",
+      "dependencies": [
+        "@neondatabase/serverless",
+        "kysely"
+      ]
+    },
     "kysely@0.27.4": {
       "integrity": "sha512-dyNKv2KRvYOQPLCAOCjjQuCk4YFd33BvGdf/o5bC7FiW+BB6snA81Zt+2wT9QDFzKqxKa5rrOmvlK/anehCcgA=="
     },
@@ -1615,6 +1647,9 @@
     "wrappy@1.0.2": {
       "integrity": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="
     },
+    "ws@8.18.0": {
+      "integrity": "sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw=="
+    },
     "xtend@4.0.2": {
       "integrity": "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ=="
     },
@@ -1850,13 +1885,15 @@
       "npm:@nestjs/core@^10.4.4",
       "npm:@nestjs/platform-express@^10.4.4",
       "npm:@nestjs/testing@^10.4.4",
+      "npm:@types/pg@^8.11.10",
       "npm:firebase-admin@^12.6.0",
       "npm:handlebars@^4.7.8",
+      "npm:kysely-neon@^1.3.0",
       "npm:kysely@~0.27.4",
       "npm:nestjs-zod@^4.1.0",
-      "npm:pg-pool@^3.7.0",
       "npm:pg-types@^4.0.2",
       "npm:pg@^8.13.1",
+      "npm:ws@^8.18.0",
       "npm:zod@^3.23.8"
     ]
   }

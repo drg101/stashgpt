@@ -9,7 +9,6 @@ import type {
 } from "./response.schema.ts";
 import type { Json } from "../global/global.types.ts";
 import { ModelService } from "../model/model.service.ts";
-import { builtins as Types } from "pg-types";
 
 @Injectable()
 export class ResponseService {
@@ -51,7 +50,7 @@ export class ResponseService {
 
   async logResponseUsed(options: {
     uid: string;
-    rid: Types.UUID;
+    rid: string;
   }) {
     await this.createNewResponseUsage({
       uid: options.uid,

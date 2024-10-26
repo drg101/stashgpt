@@ -5,14 +5,13 @@ import type {
   Selectable,
   Updateable,
 } from "kysely";
-import { builtins as Types } from "pg-types";
 
 /** LLM Response itself */
 export interface ResponseTable {
   // uuid
-  id: Generated<Types.UUID>;
+  id: Generated<string>;
   /** fk for Prompt */
-  pid: Types.UUID;
+  pid: string;
   /** pid$input hash for quick lookup */
   input_hash: string;
 
@@ -29,9 +28,9 @@ export type ResponseUpdate = Updateable<ResponseTable>;
 /** LLM response usage */
 export interface ResponseUsageTable {
   // uuid
-  id: Generated<Types.UUID>;
+  id: Generated<string>;
   /** fk for Response */
-  rid: Types.UUID;
+  rid: string;
 
   /** uid of user who used it */
   uid: string;
