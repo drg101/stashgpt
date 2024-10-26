@@ -5,7 +5,7 @@ import { initializeApp } from "firebase-admin/app";
 
 const firebase_cert = Deno.env.get("FIREBASE_CERT");
 if (!firebase_cert) {
-    throw new Error("FIREBASE_CERT environment variable is required");
+  throw new Error("FIREBASE_CERT environment variable is required");
 }
 initializeApp(JSON.parse(firebase_cert));
 

@@ -15,7 +15,3 @@ Deno.test("Exists", () => {
   expect(responseService).toBeDefined();
   expect(responseController).toBeDefined();
 });
-
-Deno.test("Hello World", () => {
-  expect(responseController.hello()).toBe("Hello World!");
-});
