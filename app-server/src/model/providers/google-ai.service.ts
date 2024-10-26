@@ -30,10 +30,11 @@ export class GoogleAIService implements ModelInterface {
 
     const template = Handlebars.compile(prompt.user_prompt);
     const userPrompt = template(input);
-
+    console.log({ prompt });
     const chatSession = model.startChat({
       generationConfig: {
         responseSchema: prompt.schema as ResponseSchema,
+        ...(prompt.schema && { responseMimeType: "application/json" }),
         temperature: prompt.temperature,
       },
     });

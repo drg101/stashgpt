@@ -2,6 +2,7 @@ import {
   BadRequestException,
   Body,
   Controller,
+  Get,
   Post,
   Req,
   UseGuards,
@@ -18,6 +19,11 @@ export class ResponseController {
     private prompt: PromptService,
     private response: ResponseService,
   ) {}
+
+  @Get("/hello")
+  hello() {
+    return "Hello, World!";
+  }
 
   @UseGuards(AuthGuard)
   @Post("/get-response")

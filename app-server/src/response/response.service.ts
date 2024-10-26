@@ -43,8 +43,13 @@ export class ResponseService {
       input: JSON.stringify(input),
       response: JSON.stringify(raw_response),
     });
-    console.log({ response });
     
+    this.createNewResponseUsage({
+      uid: options.uid,
+      rid: response.id,
+      timestamp: Date.now(),
+    });
+
     return raw_response;
   }
 
@@ -67,13 +72,14 @@ export class ResponseService {
 
   // Also return the the new response
   async createNewResponse(response: NewResponse) {
-    return await db.insertInto("response")
+    return (await db.insertInto("response")
       .values(response)
-      .execute();
+      .returningAll()
+      .execute())[0];
   }
 
   async createNewResponseUsage(responseUsage: NewResponseUsage) {
-    return await db.insertInto("responseUsage")
+    return await db.insertInto("responseusage")
       .values(responseUsage)
       .execute();
   }

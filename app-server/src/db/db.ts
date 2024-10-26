@@ -1,4 +1,4 @@
-import { Kysely, PostgresDialect } from "kysely";
+import { Kysely } from "kysely";
 import { NeonDialect } from "kysely-neon";
 import type { PromptTable } from "../prompt/prompt.schema.ts";
 import type {
@@ -11,7 +11,7 @@ import ws from "ws";
 export interface Database {
   prompt: PromptTable;
   response: ResponseTable;
-  responseUsage: ResponseUsageTable;
+  responseusage: ResponseUsageTable;
 }
 
 export const db = new Kysely<Database>({
