@@ -41,7 +41,7 @@ export class GoogleAIService implements ModelInterface {
 
     console.log("Using user prompt", userPrompt);
 
-    const result = await chatSession.sendMessage("INSERT_INPUT_HERE");
+    const result = await chatSession.sendMessage(userPrompt);
     return JSON.parse(result.response.text());
   }
 }

@@ -18,7 +18,11 @@ export class ResponseService {
     prompt: Prompt;
     input: Json;
     uid: string;
-  }): Promise<Response["response"]> {
+  }): Promise<{
+    response_id: string;
+    usage_id: string;
+    response: Response["response"];
+  }> {
     const { prompt, input } = options;
     const inputHash = this.util.sha256(`${prompt.id}`, JSON.stringify(input));
 
@@ -27,12 +31,16 @@ export class ResponseService {
     if (existingResponse) {
       console.log("Cache hit for", existingResponse);
       // do in the background
-      this.createNewResponseUsage({
+      const usage = await this.createNewResponseUsage({
         uid: options.uid,
         rid: existingResponse.id,
         timestamp: Date.now(),
       });
-      return existingResponse.response;
+      return {
+        response_id: existingResponse.id,
+        usage_id: usage.id,
+        response: existingResponse.response,
+      };
     }
 
     const raw_response = await this.model.evaluate({ prompt, input });
@@ -43,25 +51,18 @@ export class ResponseService {
       input: JSON.stringify(input),
       response: JSON.stringify(raw_response),
     });
-    
-    this.createNewResponseUsage({
+
+    const usage = await this.createNewResponseUsage({
       uid: options.uid,
       rid: response.id,
       timestamp: Date.now(),
     });
 
-    return raw_response;
-  }
-
-  async logResponseUsed(options: {
-    uid: string;
-    rid: string;
-  }) {
-    await this.createNewResponseUsage({
-      uid: options.uid,
-      rid: options.rid,
-      timestamp: Date.now(),
-    });
+    return {
+      response_id: response.id,
+      usage_id: usage.id,
+      response: response.response,
+    };
   }
 
   async getResponseByInputHash(hash: string) {
@@ -79,8 +80,9 @@ export class ResponseService {
   }
 
   async createNewResponseUsage(responseUsage: NewResponseUsage) {
-    return await db.insertInto("responseusage")
+    return (await db.insertInto("responseusage")
       .values(responseUsage)
-      .execute();
+      .returningAll()
+      .execute())[0];
   }
 }

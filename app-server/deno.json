@@ -28,5 +28,13 @@
   "compilerOptions": {
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
+  },
+  "deploy": {
+    "project": "425496e2-edf3-4fd2-9b13-64876e7f3d4c",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "main.ts"
   }
 }
